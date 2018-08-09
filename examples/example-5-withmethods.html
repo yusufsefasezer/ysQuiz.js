@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Example: WithMethods</title>
+  <link rel="stylesheet" href="../dist/css/ysquiz.min.css" />
+</head>
+
+<body>
+
+  <div class="ysquiz"></div>
+
+  <script src="../dist/js/ysquiz.min.js"></script>
+  <script>
+
+    var myQuiz = new ysQuiz();
+    myQuiz.addQuestion("What is the sixth month of the year?", ["July", "August", "May", "April"], "June");
+    myQuiz.addQuestion("Fill in the missing number: 24, 31, 38, 45, 52, ?", ["54", "23", "65", "44"], "59");
+    myQuiz.addQuestion("Which of the dates below is the latest?", ["February 20, 1992", "June 14, 1929", "May 31, 1992", "June 6, 1929"], "October 14, 1992");
+    myQuiz.addQuestion("Which of the numbers below is the smallest?", ["7", "9", "1", "10"], ".61");
+    myQuiz.setup();
+
+  </script>
+</body>
+
+</html>

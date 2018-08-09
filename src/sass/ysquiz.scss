@@ -1,0 +1,53 @@
+$quizWidth: 300px;
+
+.ysquiz {
+  /* custom css rules */
+  max-width: $quizWidth !important;
+  .ysquiz-header {
+    /* custom css rules */
+    h1 {
+      margin: 0;
+      border-bottom: 1px solid #000000;
+    }
+  }
+  
+  .ysquiz-content {
+    /* custom css rules */
+    .ysquiz-question {
+      /* custom css rules */
+      .ysquiz-question-title {
+        /* custom css rules */
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+      button {
+        /* custom css rules */
+      }
+      button:hover {
+        /* custom css rules */
+      }
+    }
+
+    .ysquiz-result {
+      text-align: center;
+      .ysquiz-total-question {
+        /* custom css rules */
+      }
+      .ysquiz-total-correct {
+        /* custom css rules */
+      }
+      .ysquiz-total-wrong {
+        /* custom css rules */
+      }
+    }
+  }
+  
+  .ysquiz-footer {
+    /* custom css rules */
+    .ysquiz-message {
+      /* custom css rules */
+    }
+  }
+}

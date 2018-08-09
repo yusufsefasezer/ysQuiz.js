@@ -1,0 +1,85 @@
+/*!
+ * ysquiz - Easy to use and customizable quiz plugin.
+ * Author: Yusuf SEZER <yusufsezer@mail.com>
+ * Version: v1.0.0
+ * Url: https://github.com/yusufsefasezer/ysQuiz.js
+ * License: MIT
+ */
+
+/* line 3, src/sass/ysquiz.scss */
+.ysquiz {
+  /* custom css rules */
+  max-width: 300px !important;
+}
+
+/* line 6, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-header {
+  /* custom css rules */
+}
+
+/* line 8, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-header h1 {
+  margin: 0;
+  border-bottom: 1px solid #000000;
+}
+
+/* line 14, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content {
+  /* custom css rules */
+}
+
+/* line 16, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-question {
+  /* custom css rules */
+}
+
+/* line 18, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-question .ysquiz-question-title {
+  /* custom css rules */
+}
+
+/* line 21, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-question ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* line 25, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-question button {
+  /* custom css rules */
+}
+
+/* line 28, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-question button:hover {
+  /* custom css rules */
+}
+
+/* line 33, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-result {
+  text-align: center;
+}
+
+/* line 35, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-result .ysquiz-total-question {
+  /* custom css rules */
+}
+
+/* line 38, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-result .ysquiz-total-correct {
+  /* custom css rules */
+}
+
+/* line 41, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-content .ysquiz-result .ysquiz-total-wrong {
+  /* custom css rules */
+}
+
+/* line 47, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-footer {
+  /* custom css rules */
+}
+
+/* line 49, src/sass/ysquiz.scss */
+.ysquiz .ysquiz-footer .ysquiz-message {
+  /* custom css rules */
+}
