@@ -1,7 +1,7 @@
 # ysQuiz.js
 Easy to use and customizable quiz plugin.
 
-## [Download](https://github.com/yusufsefasezer/ysQuiz.js/archive/master.zip) / [Demo](http://www.yusufsezer.com/ysQuiz.js/examples/example-7-multiple.html) / [yusufsezer.com](http://www.yusufsezer.com)
+## [Download](https://github.com/yusufsefasezer/ysQuiz.js/archive/master.zip) / [Demo](https://www.yusufsezer.com/projects/ysquiz-js/) / [yusufsezer.com](http://www.yusufsezer.com)
 
 ## Why should I use ysQuiz.js
 * No need any plugin - does not need any plugin or library.
