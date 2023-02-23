@@ -221,10 +221,10 @@
 
     };
 
-		/**
-		 * Destroy the current initialization.
-		 * @public
-		 */
+    /**
+     * Destroy the current initialization.
+     * @public
+     */
     publicAPIs.destroy = function () {
 
       // if plugin isn't already initialized, stop

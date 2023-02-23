@@ -1,7 +1,7 @@
 /*!
  * ysquiz - Easy to use and customizable quiz plugin.
  * Author: Yusuf Sezer <yusufsezer@mail.com>
- * Version: v1.0.0
+ * Version: v1.0.1
  * Url: https://github.com/yusufsefasezer/ysQuiz.js
  * License: MIT
  */
@@ -229,10 +229,10 @@
 
     };
 
-		/**
-		 * Destroy the current initialization.
-		 * @public
-		 */
+    /**
+     * Destroy the current initialization.
+     * @public
+     */
     publicAPIs.destroy = function () {
 
       // if plugin isn't already initialized, stop
