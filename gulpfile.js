@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const del = require('del');
-const lazypipe = require('lazypipe');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const header = require('gulp-header');
