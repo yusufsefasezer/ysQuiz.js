@@ -1,6 +1,6 @@
 /*!
  * ysquiz - Easy to use and customizable quiz plugin.
- * Author: Yusuf SEZER <yusufsezer@mail.com>
+ * Author: Yusuf Sezer <yusufsezer@mail.com>
  * Version: v1.0.0
  * Url: https://github.com/yusufsefasezer/ysQuiz.js
  * License: MIT
