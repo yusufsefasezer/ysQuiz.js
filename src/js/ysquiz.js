@@ -50,6 +50,7 @@
   var supports = function () {
     return (
       'querySelector' in document &&
+      'querySelectorAll' in document &&
       'addEventListener' in window &&
       'classList' in document.createElement('div')
     );
@@ -77,13 +78,13 @@
     // Variables
     var extended = {};
     var deep = false;
-    var i = 0;
+    var index = 0;
     var length = arguments.length;
 
     // Check if a deep merge
     if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
       deep = arguments[0];
-      i++;
+      index++;
     }
 
     // Merge the object into the extended object
@@ -101,8 +102,8 @@
     };
 
     // Loop through each object and conduct a merge
-    for (; i < length; i++) {
-      var obj = arguments[i];
+    for (; index < length; index++) {
+      var obj = arguments[index];
       merge(obj);
     }
 
@@ -176,8 +177,8 @@
 
       // Add the questions
       if (Array.isArray(questions)) {
-        for (var i = 0, qL = questions.length; i < qL; i++) {
-          publicAPIs.addQuestion(questions[i].question, questions[i].answers, questions[i].correct);
+        for (var index = 0, length = questions.length; index < length; index++) {
+          publicAPIs.addQuestion(questions[index].question, questions[index].answers, questions[index].correct);
         }
       }
 
@@ -248,15 +249,28 @@
     * Question Object
     * @param {String} question Question
     * @param {Array} answers Question answers
-    * @param {String} correctAnswer Correct answer
+    * @param {String|Array} correctAnswer Correct answer
     * @constructor
     */
     var Question = function (question, answers, correctAnswer) {
       this.question = question;
       this.answers = answers;
-      this.selected = -1;
-      this.correctIndex = randomNumber(0, answers.length);
-      answers.splice(this.correctIndex, 0, correctAnswer);
+      this.selected = [];
+      this.type = Array.isArray(correctAnswer) ? 'checkbox' : 'radio';
+      this.correctIndexes = [];
+      if (this.type === 'radio')
+        correctAnswer = [correctAnswer];
+      this.addMultiple(correctAnswer);
+    };
+
+
+    Question.prototype.addMultiple = function name(correctAnswers) {
+      for (var index = 0; index < correctAnswers.length; index++) {
+        const currentAnswer = correctAnswers[index];
+        var randomIndex = randomNumber(0, this.answers.length);
+        this.correctIndexes.push(randomIndex);
+        this.answers.splice(randomIndex, 0, currentAnswer);
+      }
     };
 
     /**
@@ -264,7 +278,10 @@
      * @public
      */
     Question.prototype.checkAnswer = function () {
-      return this.selected == this.correctIndex;
+      var self = this;
+      return this.selected.some(function (value, index, values) {
+        return self.correctIndexes.includes(value);
+      });
     };
 
     /**
@@ -284,10 +301,16 @@
       elem.innerHTML += '<h3 class="ysquiz-question-title">' + ((settings.enumerator === true) ? ((stats.currentQuestion + 1) + '. ') : ('')) + ' ' + this.question + '</h3>';
 
       // Create the answers
+      var fragment = document.createDocumentFragment();
       var answers = document.createElement('ul');
-      for (var j = 0, aL = this.answers.length; j < aL; j++) {
-        answers.innerHTML += '<li><label><input type="radio" name=question' + (stats.currentQuestion + 1) + ' />' + this.answers[j] + '</label></li>';
+      var answerHTML = '';
+      for (var index = 0, length = this.answers.length; index < length; index++) {
+        var name = 'question' + stats.currentQuestion + 1;
+        var text = this.answers[index];
+        answerHTML += '<li><label><input type="' + this.type + '" name="' + name + '" />' + text + '</label></li>';
       }
+      answers.innerHTML = answerHTML;
+      fragment.appendChild(answers);
 
       // Create the button
       var nextBtn = document.createElement('button');
@@ -295,10 +318,10 @@
       nextBtn.addEventListener('click', function () {
         onClickEvent(this, self);
       });
+      fragment.appendChild(nextBtn);
 
       // Append the question
-      elem.appendChild(answers);
-      elem.appendChild(nextBtn);
+      elem.appendChild(fragment);
 
     };
 
@@ -325,13 +348,15 @@
       }
 
       // Selects radio buttons
-      var radioButtons = settings.wrapper.querySelectorAll('input[type=radio]');
+      //var radioButtons = settings.wrapper.querySelectorAll('input[type=radio]');
+      var inputs = settings.wrapper.querySelectorAll('input');
       var messageElement = settings.wrapper.querySelector('.ysquiz-message');
-      question.selected = getSelectedIndex(radioButtons);
+      //question.selected = getSelectedIndex(radioButtons);
+      question.selected = getSelectedIndexes(inputs);
 
       // Checks whether selection is made
-      if (question.selected === -1) {
-        messageElement.textContent = 'Please select a answer!';
+      if (question.selected.length < 1) {
+        messageElement.textContent = 'Please select an answer!';
         return;
       }
 
@@ -360,16 +385,31 @@
 
     /**
     * Get the selected button index.
-    * @param {Array} buttons to be checked
+    * @param {Array} inputs to be checked
     * @private
     */
-    var getSelectedIndex = function (buttons) {
+    var getSelectedIndex = function (inputs) {
 
-      for (var i = 0, bL = buttons.length; i < bL; i++) {
-        if (buttons[i].checked) return i;
+      for (var index = 0, length = inputs.length; index < length; index++) {
+        if (inputs[index].checked) return index;
       }
 
       return -1;
+    };
+
+    /**
+    * Get the selected indexes.
+    * @param {Array} inputs to be checked
+    * @private
+    */
+    var getSelectedIndexes = function (inputs) {
+      var selected = [];
+
+      for (var index = 0, length = inputs.length; index < length; index++) {
+        if (inputs[index].checked) selected.push(index);
+      }
+
+      return selected;
     };
 
     //

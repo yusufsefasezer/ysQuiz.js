@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Example: Multiple Answer</title>
+  <link rel="stylesheet" href="../dist/css/ysquiz.min.css" />
+</head>
+
+<body>
+
+  <div class="ysquiz"></div>
+  <div id="otherWrapper"></div>
+
+  <script src="../dist/js/ysquiz.js"></script>
+  <script>
+
+    var myQuestions = [{
+      question: "What equipment is needed for a volleyball game?",
+      answers: ["Helmet", "Cleats"],
+      correct: ["Net", "Volleyball"]
+    }, {
+      question: "What is the sixth month of the year?",
+      answers: ["July", "August", "May", "April"],
+      correct: "June"
+    }, {
+      question: "Fill in the missing number: 24, 31, 38, 45, 52, ?",
+      answers: ["54", "23", "65", "44"],
+      correct: "59"
+    }];
+
+    var myQuiz = new ysQuiz(myQuestions);
+
+    var otherQuiz = new ysQuiz([], {
+      wrapper: "#otherWrapper",
+      title: "Other Quiz",
+      enumerator: false
+    });
+    otherQuiz.addQuestion("What is the sixth month of the year?", ["July", "August", "May", "April"], "June");
+    otherQuiz.addQuestion("Fill in the missing number: 24, 31, 38, 45, 52, ?", ["54", "23", "65", "44"], "59");
+    otherQuiz.setup();
+
+  </script>
+</body>
+
+</html>
