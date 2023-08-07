@@ -1,6 +1,14 @@
 # ysQuiz.js
 Easy to use and customizable quiz plugin.
 
+ysQuiz.js is a remarkable, user-friendly, and highly customizable quiz plugin that offers a convenient solution for implementing engaging quizzes directly within your JavaScript projects. With ysQuiz.js, there is no need for any additional plugins or libraries, as it is a standalone JavaScript library capable of handling all your quiz requirements.
+
+One major advantage of ysQuiz.js is its simplicity and ease of use. This library enables you to effortlessly create quiz questions without any complicated programming knowledge. By simply defining your questions, you can seamlessly integrate ysQuiz.js into your website or application, making it ideal for both experienced programmers and newcomers alike.
+
+Customizability is one of the standout features of ysQuiz.js. It allows developers to create stunning and interactive quizzes customized to suit their specific needs. You have the freedom to tailor the appearance, behavior, and functionality of the quiz to align with your project's design and requirements. This level of flexibility empowers you to create captivating quizzes that resonate with your audience and enhance their overall user experience.
+
+Whether you are looking to develop a javascript quiz library, add quiz code to your existing javascript project, or require javascript short questions and answers, ysQuiz.js is the perfect solution. Its comprehensive set of features, including easy integration, customization options, and versatility, make it an excellent choice for any interactive quiz-related development.
+
 ## [Download](https://github.com/yusufsefasezer/ysQuiz.js/archive/master.zip) / [Demo](https://www.yusufsezer.com/projects/ysquiz-js/) / [yusufsezer.com](http://www.yusufsezer.com)
 
 ## Why should I use ysQuiz.js
